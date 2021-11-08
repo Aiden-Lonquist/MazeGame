@@ -9,10 +9,12 @@ public class playerScript : MonoBehaviour
     public GameObject player;
     public float speed;
     public bool noclipEnabled;
+    float start_pos_x, start_pos_z;
     // Start is called before the first frame update
     void Start()
     {
-        
+        start_pos_x = -3.5f;
+        start_pos_z = -3.5f;
     }
 
     // Update is called once per frame
@@ -24,6 +26,11 @@ public class playerScript : MonoBehaviour
         {
             noclipEnabled = !noclipEnabled;
             noclip();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Home)) 
+        {
+            resetPOS();
         }
     }
 
@@ -48,5 +55,12 @@ public class playerScript : MonoBehaviour
             collider.enabled = true;
             player.layer = 0;
         }
+    }
+
+    private void resetPOS()
+    {
+        player.transform.position = new Vector3(start_pos_x, 0.5f, start_pos_z);
+        GameObject enemy = GameObject.Find("Enemy"); 
+        enemy.GetComponent<EnemyScript>().resetPOS();
     }
 }

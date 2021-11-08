@@ -9,10 +9,13 @@ public class EnemyScript : MonoBehaviour
     private Quaternion direction;
     public int initial_rotation_timer;
     private int cur_rotation_timer;
+    float start_pos_x, start_pos_z;
     // Start is called before the first frame update
     void Start()
     {
         cur_rotation_timer = initial_rotation_timer;
+        start_pos_x = enemy.transform.position.x;
+        start_pos_z = enemy.transform.position.z;
     }
 
     // Update is called once per frame
@@ -36,5 +39,10 @@ public class EnemyScript : MonoBehaviour
     private void walk()
     {
         enemy.transform.position += transform.forward * speed;
+    }
+
+    public void resetPOS()
+    {
+        enemy.transform.position = new Vector3(start_pos_x, 0.5f, start_pos_z);
     }
 }
