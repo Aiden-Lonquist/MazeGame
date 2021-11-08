@@ -22,13 +22,13 @@ public class playerScript : MonoBehaviour
     {
         movement();
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.JoystickButton1))
         {
             noclipEnabled = !noclipEnabled;
             noclip();
         }
 
-        if (Input.GetKeyDown(KeyCode.Home)) 
+        if (Input.GetKeyDown(KeyCode.Home) || Input.GetKeyDown(KeyCode.JoystickButton0))
         {
             resetPOS();
         }

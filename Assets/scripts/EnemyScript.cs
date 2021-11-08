@@ -47,6 +47,6 @@ public class EnemyScript : MonoBehaviour
 
     public void resetPOS()
     {
-        enemy.transform.position = new Vector3(start_pos_x, 0.5f, start_pos_z);
+        enemy.transform.position = new Vector3(start_pos_x, 0f, start_pos_z);
     }
 }
