@@ -11,10 +11,6 @@ public class playerScript : MonoBehaviour
     public GameObject player;
     public float speed;
     public bool noclipEnabled;
-<<<<<<< Updated upstream
-    // Start is called before the first frame update
-    void Start()
-=======
     float start_pos_x, start_pos_z;
     private InputActions inputActions;
     private InputAction movement;
@@ -34,9 +30,9 @@ public class playerScript : MonoBehaviour
 
         // Start is called before the first frame update
         void Start()
->>>>>>> Stashed changes
     {
-        
+        start_pos_x = -3.5f;
+        start_pos_z = -3.5f;
     }
 
     // Update is called once per frame
@@ -49,14 +45,11 @@ public class playerScript : MonoBehaviour
             noclipEnabled = !noclipEnabled;
             noclip();
         }
-<<<<<<< Updated upstream
-=======
 
         if (Input.GetKeyDown(KeyCode.Home) || Input.GetKeyDown(KeyCode.JoystickButton0)) 
         {
             resetPOS();
         }
->>>>>>> Stashed changes
     }
 
 
@@ -72,8 +65,6 @@ public class playerScript : MonoBehaviour
             player.layer = 0;
         }
     }
-<<<<<<< Updated upstream
-=======
 
     private void resetPOS()
     {
@@ -89,5 +80,4 @@ public class playerScript : MonoBehaviour
 
         transform.Translate(v3);
     }
->>>>>>> Stashed changes
 }
