@@ -35,9 +35,11 @@ public class EnemyScript : MonoBehaviour
         direction = Random.rotation;
         // adjust values so that he doesn't rotate along x or y
         direction.x = 0;
+        direction.y *= 45f;
         direction.z = 0;
+        direction.w = 20;
         // lerp (FROM rotation, TO rotation, 
-        enemy.transform.rotation = Quaternion.Lerp(enemy.transform.rotation, direction, 0.1f);
+        enemy.transform.rotation = Quaternion.Lerp(enemy.transform.rotation, direction, 0.005f);
     }
 
     private void walk()
